@@ -20,6 +20,7 @@ export const Input = ({
                 className='input'
                 type={type}
                 required={required}
+                placeholder='Enter'
                 {...otherProps}
             />
             {error ? error.message : ''}

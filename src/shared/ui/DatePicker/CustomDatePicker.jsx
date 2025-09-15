@@ -13,8 +13,7 @@ const CustomInput = forwardRef(({ value, onClick }, ref) => (
             value={value}
             readOnly
         />
-        <CalendarIcon/>
-
+        <CalendarIcon className='iconDatePicker'/>
     </div>
 ))
 export const CustomDatePicker = ({

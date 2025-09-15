@@ -1,6 +1,6 @@
-export const CalendarIcon = () => {
+export const CalendarIcon = ({ className }) => {
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" className={className}>
         <path d="M8 2V5" stroke="#242424" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M16 2V5" stroke="#242424" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>
         <path d="M3.5 9.09H20.5" stroke="#242424" strokeWidth="1.5" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round"/>

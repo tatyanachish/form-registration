@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import './Select.css'
+import { SelectIcon } from '../../assets/SelectIcon'
 
 export const Select = ({
     label,
@@ -20,17 +21,38 @@ export const Select = ({
     return(
         <div className='container'>
             {label && (
-                <label className='label'>
+                <label className='label' htmlFor={otherProps.name}>
                     {label} {required}<span>*</span>
                 </label>
             )}
-            <input 
-                placeholder='Select type' 
-                readOnly
-                value={value} 
-                onClick={()=>setIsOpen((prev) => !prev)} 
-                className='input'
-            />
+            <div className='inputWrapper' onClick={() => setIsOpen((prev) => !prev)}>
+                <input 
+                    placeholder='Select type' 
+                    readOnly
+                    value={value} 
+                    required={required}
+                    onClick={()=>setIsOpen((prev) => !prev)} 
+                    className='input'
+                />
+                <SelectIcon className={`icon ${isOpen ? "iconOpen" : ""}`} />
+            </div>
+            {isOpen && (
+                    <div className='dropdownMen' onMouseLeave={() => setIsOpen(false)} fullWidth>
+                        {options.length > 0 ? (
+                            options.map((option) => (
+                                <div
+                                    fullWidth
+                                    key={option}
+                                    onClick={() => handleSelect(option)}
+                                    className='option'
+                                >
+                                    {option}
+                                </div>
+                            ))) : (<p>Nothing found</p>)
+                        }
+                    </div>
+                )}
+            
             {error ? error.message : ''}
         </div>
     )
