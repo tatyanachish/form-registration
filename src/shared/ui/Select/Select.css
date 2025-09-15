@@ -1,0 +1,23 @@
+.select-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.label {
+    font-family: "Playfair Display", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+.input {
+    border-radius: 1rem;
+    border: 1px solid #2424241a;
+    background-color: #F5F5F5;
+    padding: 1rem 1.5rem;
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+}
+input::placeholder{
+    font-family: "Playfair Display", serif;
+    font-size: 15px;    
+}
