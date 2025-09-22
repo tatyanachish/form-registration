@@ -6,7 +6,6 @@ export const Input = ({
     required,
     error,
     className,
-    fullWidth,
     ...otherProps
 }) => {
     return (
@@ -20,7 +19,6 @@ export const Input = ({
                 className='input'
                 type={type}
                 required={required}
-                placeholder='Enter'
                 {...otherProps}
             />
             {error ? error.message : ''}

@@ -1,21 +1,16 @@
 
 import './App.css'
-import { CustomDatePicker } from './shared/ui/DatePicker/CustomDatePicker'
-
-import { Input } from './shared/ui/Input/Input'
-import { Select } from './shared/ui/Select/Select'
-import { Textarea } from './shared/ui/Textarea/Textarea'
+import { ContactCard } from './widjets/Schedule/ui/ContactCard/ContactCard'
+import { Schedule } from './widjets/Schedule/ui/Schedule/Schedule'
 
 function App() {
   
 
   return (
-    <>      
-      <Input/>
-      <Select/>
-      <CustomDatePicker/>
-      <Textarea/>
-    </>
+    <div className='session'>      
+      <Schedule  className='schedule'/>
+      <ContactCard/>     
+    </div>
   )
 }
 

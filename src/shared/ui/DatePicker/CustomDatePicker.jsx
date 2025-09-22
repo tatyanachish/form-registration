@@ -29,7 +29,9 @@ export const CustomDatePicker = ({
     return(
         <div className='container'>
             {label && (
-                <label className='label'>{label}{required}<span>*</span></label>
+                <label className='label'>
+                    {label}{required && <span>*</span>}
+                </label>
             )}
         <DatePicker 
             selected={selected}

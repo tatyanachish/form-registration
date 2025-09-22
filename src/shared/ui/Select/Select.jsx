@@ -27,7 +27,6 @@ export const Select = ({
             )}
             <div className='inputWrapper' onClick={() => setIsOpen((prev) => !prev)}>
                 <input 
-                    placeholder='Select type' 
                     readOnly
                     value={value} 
                     required={required}
