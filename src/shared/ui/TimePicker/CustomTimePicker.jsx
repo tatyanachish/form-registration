@@ -1,6 +1,7 @@
 import { forwardRef } from "react"
 import { TimeIcon } from "../../assets/TimeIcon"
 import './CustomTimePicker.css'
+import DatePicker from "react-datepicker"
 
 const CustomInput = forwardRef(({ value, onClick }, ref) => (
     <div className='inputWrapper' onClick={onClick} ref={ref}>
@@ -28,8 +29,18 @@ export const  CustomTimePicker = ({
                     {label}{required && <span>*</span>}
                 </label>
             )}
-            <div>
-                <CustomInput />
+            <div className="inputHolder">
+                <DatePicker 
+                    selected={selected}
+                    onChange={onChange}
+                    showTimeSelect
+                    showTimeSelectOnly
+                    dateFormat="HH:mm"
+                    timeCaption="Select time"
+                    includeTimes={availableTimes}
+                    customInput={<CustomInput/>}
+                    />
+                
             </div>
             {dateError && (
                 {dateError}

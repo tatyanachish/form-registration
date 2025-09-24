@@ -33,14 +33,16 @@ export const CustomDatePicker = ({
                     {label}{required && <span>*</span>}
                 </label>
             )}
-        <DatePicker 
-            selected={selected}
-            onChange={onChange}
-            minDate={today}
-            maxDate={maxDate}
-            dateFormat='MM/dd/yyyy'
-            customInput={<CustomInput/>}
+            <div className='inputHolder'>
+                <DatePicker 
+                    selected={selected}
+                    onChange={onChange}
+                    minDate={today}
+                    maxDate={maxDate}
+                    dateFormat='MM/dd/yyyy'
+                    customInput={<CustomInput/>}
         />
+        </div>
         {dateError && (
             {dateError}
         )}

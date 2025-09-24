@@ -1,9 +1,42 @@
-.schedule {
-    width: 43rem,
+.container-schedule{
+width: 43rem;
+position: relative;
 }
-.schedule Input {
-    width: 20rem;
+
+.schedule {    
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 24px; 
 }
-.schedule Textarea {
-    width: 43rem;
+
+.form-item {
+    width: 100%;       
 }
+
+.form-item input,
+.form-item select,
+.form-item .custom-date-picker,
+.form-item .custom-time-picker {
+    width: 100%;       
+    box-sizing: border-box;
+}
+
+.form-textarea {
+    grid-column: 1 / -1;  
+}
+
+.form-textarea textarea {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 8rem;
+}
+.btn {
+    position: absolute;
+    bottom: 0px;
+    color:#FDCE16;
+    font-family: "Playfair Display", serif;   
+    font-size: 24px;
+    font-weight: 500;
+    width: 50%;
+}
+

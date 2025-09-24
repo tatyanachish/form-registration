@@ -7,10 +7,11 @@ export const Select = ({
     error,
     required,
     className,
-    fullWidth,
     value,
+    fullWidth,
     onChange,
     options = [],
+    placeholder,
     ...otherProps
 }) => {
     const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +23,7 @@ export const Select = ({
         <div className='container'>
             {label && (
                 <label className='label' htmlFor={otherProps.name}>
-                    {label} {required}<span>*</span>
+                    {label}{required}<span>*</span>
                 </label>
             )}
             <div className='inputWrapper' onClick={() => setIsOpen((prev) => !prev)}>
@@ -32,6 +33,7 @@ export const Select = ({
                     required={required}
                     onClick={()=>setIsOpen((prev) => !prev)} 
                     className='input'
+                    placeholder= {placeholder}
                 />
                 <SelectIcon className={`icon ${isOpen ? "iconOpen" : ""}`} />
             </div>

@@ -1,0 +1,15 @@
+.iconWapper{
+    display: flex;
+    justify-content: space-evenly;    
+    width: 100%;
+}
+.circle {
+    border-radius: 50%;
+    padding: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #003D2B;
+}
+
+

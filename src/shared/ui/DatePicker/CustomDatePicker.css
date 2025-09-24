@@ -1,7 +1,9 @@
 .container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch; 
+    width: 100%;         /* добавляем растяжку на всю ширину родителя */
+    box-sizing: border-box;
 }
 .label{
     font-family: "Playfair Display", serif;
@@ -9,6 +11,11 @@
     font-weight: 500;
     color: black;
 }
+.inputHolder {
+    width: 100%;            /* ✅ растягивает обёртку */
+    box-sizing: border-box;
+}
+
 .datePicker{
     border-radius: 1rem;
     border: 1px solid #2424241a;
@@ -16,14 +23,17 @@
     padding: 1rem 1.5rem;
     font-family: "Playfair Display", serif;
     font-size: 18px;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 .inputWrapper{
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;  
 }
 .iconDatePicker{
     position: absolute;
     right: 1.5rem;
-
 }

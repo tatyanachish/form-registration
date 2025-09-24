@@ -29,7 +29,7 @@ export const dataForm = [
         id: 3,
         component: Select,
         name: 'service',
-        label: 'Preffired Services',
+        label: 'Preferred Services',
         placeholder: 'Select Type',
         required: true,
         
@@ -41,7 +41,6 @@ export const dataForm = [
         label: 'Location',
         placeholder: 'Enter Location',
         required: true,
-       
     },
     {
         id: 5,
@@ -57,7 +56,6 @@ export const dataForm = [
         name: 'timePicker',
         label: 'Preferred Session Time',
         required: true, 
-       
     },
     {
         id: 7,
@@ -65,6 +63,5 @@ export const dataForm = [
         name: 'message',
         label: 'Your Message',
         placeholder: 'Enter here...',
-       
     }
 ]

@@ -12,6 +12,6 @@ export const dataContact =  [
     {
         id: 3,
         title: 'Time',
-        info: ['Monday-Friday: 10.00-20.00', 'Saturday, Sunday: 10.00-14.00']
+        info: ['Monday-Friday: 10.00-20.00', 'Saturday-Sunday: 10.00-14.00']
     },
 ]
