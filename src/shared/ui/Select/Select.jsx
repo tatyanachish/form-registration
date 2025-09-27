@@ -8,13 +8,13 @@ export const Select = ({
     required,
     className,
     value,
-    fullWidth,
     onChange,
     options = [],
     placeholder,
     ...otherProps
 }) => {
     const [isOpen, setIsOpen] = useState(false)
+
     const handleSelect = (option) => {
         onChange(option);
         setIsOpen(false)
@@ -29,20 +29,18 @@ export const Select = ({
             <div className='inputWrapper' onClick={() => setIsOpen((prev) => !prev)}>
                 <input 
                     readOnly
-                    value={value} 
+                    value={value || ''} 
                     required={required}
-                    onClick={()=>setIsOpen((prev) => !prev)} 
                     className='input'
                     placeholder= {placeholder}
                 />
                 <SelectIcon className={`icon ${isOpen ? "iconOpen" : ""}`} />
             </div>
             {isOpen && (
-                    <div className='dropdownMen' onMouseLeave={() => setIsOpen(false)} fullWidth>
+                    <div className='dropdownMen' onMouseLeave={() => setIsOpen(false)}>
                         {options.length > 0 ? (
                             options.map((option) => (
                                 <div
-                                    fullWidth
                                     key={option}
                                     onClick={() => handleSelect(option)}
                                     className='option'

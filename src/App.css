@@ -1,6 +1,8 @@
 .containerHolder{
     display: flex;
     flex-direction: column;
+    height: auto;
+
 }
 .headliner{
     font-family: "Playfair Display", serif;

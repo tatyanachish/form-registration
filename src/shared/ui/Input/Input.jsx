@@ -10,9 +10,9 @@ export const Input = ({
 }) => {
     return (
         <div className='container'>
-            {label && (
-                <label className='label'>
-                    {label}{required && <span>*</span>} 
+             {label && (
+                <label className='label' htmlFor={otherProps.name}>
+                    {label}{required}<span>*</span>
                 </label>
             )}
             <input 
