@@ -29,7 +29,7 @@ export const CustomDatePicker = ({
     today.setHours(0, 0, 0, 0)
     return(
         <div className='container'>
-           {label && (
+            {label && (
                 <label className='label' htmlFor={otherProps.name}>
                     {label}{required}<span>*</span>
                 </label>

@@ -4,6 +4,7 @@ import { dataForm } from "../../lib/dataForm"
 import './Schedule.css'
 export const Schedule = () => {
 
+   //the mock data
     const availableTimes = [
         new Date(new Date().setHours(10, 0, 0, 0)),
         new Date(new Date().setHours(10, 30, 0, 0)),
@@ -102,8 +103,7 @@ export const Schedule = () => {
                         Submit
                     </Button>               
                 </form>
-            </FormProvider>
-            
+            </FormProvider>            
         </div>
     )
 }

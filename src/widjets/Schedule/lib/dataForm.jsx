@@ -16,10 +16,9 @@ export const validMessage = {
         textTooShort: `minimum number of characters  `
     }
 }
+
 export const textReges = /^[a-zA-Z\s]+$/;
 export const phoneReges = /^\+?1[\s\-]?(\([2-9]\d{2}\)|[2-9]\d{2})[\s\-]?[2-9]\d{2}[\s\-]?\d{4}$/;
-
-
 
 
 export const dataForm = [
@@ -65,7 +64,6 @@ export const dataForm = [
             pattern: {
                 message: validMessage.errors.validService
             }
-
         }
     },
     {
@@ -88,12 +86,7 @@ export const dataForm = [
         component: CustomDatePicker,
         name: 'datePicker',
         label: 'Preferred Session Date',
-        required: true,  
-        // validation: {
-        //     required: validMessage.required,
-
-        // }
-            
+        required: true,       
     },
     {
         id: 6,
@@ -101,10 +94,6 @@ export const dataForm = [
         name: 'timePicker',
         label: 'Preferred Session Time',
         required: true, 
-        // validation: {
-        //     required: validMessage.required,
-            
-        // }
     },
     {
         id: 7,

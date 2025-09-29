@@ -1,22 +1,17 @@
 .container-schedule{
 width: 43rem;
-position: relative;
 }
-
 .schedule {    
     display: grid;
     grid-template-columns: 1fr 1fr; 
     gap: 24px; 
 }
 .schedule .btn {
-  grid-column: 1 / -1; /* чтобы заняла всю ширину */
+    grid-column: 1 / -1; 
 }
-
-
 .form-item {
     width: 100%;       
 }
-
 .form-item input,
 .form-item select,
 .form-item .custom-date-picker,
@@ -24,18 +19,15 @@ position: relative;
     width: 100%;       
     box-sizing: border-box;
 }
-
 .form-textarea {
     grid-column: 1 / -1;  
 }
-
 .form-textarea textarea {
     width: 100%;
     box-sizing: border-box;
     min-height: 8rem;
 }
 .btn {
-    /* position: absolute; */
     bottom: 0px;
     color:#003D2B;
     font-family: "Playfair Display", serif;   
@@ -44,3 +36,30 @@ position: relative;
     width: 30%;
     padding: 20px;
 }
+
+@media all and (max-width: 1200px) {
+    .container-schedule {
+        width: 100%;
+        padding: 0 20px; 
+        box-sizing: border-box;
+    }
+    .schedule {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto; 
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+    .btn {
+        width: 100%;
+        font-size: 14px;
+    } 
+}
+
+
+
+
+
+
+

@@ -23,4 +23,13 @@
     gap: 36px;
 }
 
+@media all and (max-width: 1280px) {
+    .session {
+        flex-direction: column;
+        align-items: center;
+    }
+    .headliner{
+        font-size: 15px;
+    }
+}
 

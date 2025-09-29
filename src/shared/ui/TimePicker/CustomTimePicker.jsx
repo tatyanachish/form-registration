@@ -26,7 +26,7 @@ export const  CustomTimePicker = ({
 }) =>{
     return(
         <div className='container'>
-             {label && (
+            {label && (
                 <label className='label' htmlFor={otherProps.name}>
                     {label}{required}<span>*</span>
                 </label>
@@ -41,8 +41,7 @@ export const  CustomTimePicker = ({
                     timeCaption="Select time"
                     includeTimes={availableTimes}
                     customInput={<CustomInput/>}
-                    />
-                
+                    />                
             </div>
             {dateError && (
                 {dateError}

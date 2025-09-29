@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch; 
-    width: 100%;         /* добавляем растяжку на всю ширину родителя */
+    width: 100%;         
     box-sizing: border-box;
 }
 .label{
@@ -12,10 +12,9 @@
     color: black;
 }
 .inputHolder {
-    width: 100%;            /* ✅ растягивает обёртку */
+    width: 100%;            
     box-sizing: border-box;
 }
-
 .datePicker{
     border-radius: 1rem;
     border: 1px solid #2424241a;
@@ -26,7 +25,6 @@
     width: 100%;
     box-sizing: border-box;
 }
-
 .inputWrapper{
     position: relative;
     display: flex;
