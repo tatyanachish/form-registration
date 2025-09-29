@@ -1,12 +1,27 @@
-# React + Vite
+An interactive registration-form built on React + Vite, with custom components, validation, and responsive design.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Features:
+1.	Custom inputs with unified API and styling.
+2.	React-hook-form and DatePicker for form management and date selection.
+3.	Lucide Icons - lightweight SVG-icons for improved UX.
+4.	Partial FSD-architecture: logic and UI are separated into widgets and shared.
+5.	Responsive layout with media queries.
 
-Currently, two official plugins are available:
+# Stack:
+1.	React + Vite.
+2.	React-hook-form.
+3.	React-DatePicker.
+4.	Lucide-react.
+5.	CSS instead of SAAS for faster development in this pet-project
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Installation and run: 
+  npm install 
+  npm run dev
 
-## Expanding the ESLint configuration
+# Notes
+1.	The application is easily scalable.
+2.	Form components are rendered via the dataForm array.
+3.	React-hook-form with custom rules is used for validation.
+4.	Controller is used for DatePicker integration.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
