@@ -24,4 +24,7 @@ An interactive registration-form built on React + Vite, with custom components, 
 3.	React-hook-form with custom rules is used for validation.
 4.	Controller is used for DatePicker integration.
 
+   <img width="1093" height="740" alt="image" src="https://github.com/user-attachments/assets/2fc8e6e1-7610-40a6-9ce7-907bac3573d2" />
+
+
 
