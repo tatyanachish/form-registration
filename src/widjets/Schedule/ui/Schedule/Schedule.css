@@ -39,8 +39,8 @@ width: 43rem;
 
 @media all and (max-width: 1200px) {
     .container-schedule {
-        width: 100%;
-        padding: 0 20px; 
+        width: 90%;
+        padding: 0 50px; 
         box-sizing: border-box;
     }
     .schedule {
