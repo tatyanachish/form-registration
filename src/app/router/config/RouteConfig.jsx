@@ -15,8 +15,8 @@ export const RouteConfig = [
         path: getRouteAdmin(),
         element: <AdminSchedule/>,
         name: 'Applications',
-        AdminOnly: false 
-        // потом заменить на true
+        AdminOnly: true 
+        
     },
     {
         path: getRouteLoginAdmin(),

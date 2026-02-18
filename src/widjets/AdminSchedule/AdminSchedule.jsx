@@ -2,8 +2,13 @@ import { useEffect, useState } from 'react'
 import { useConfirmFormMutation, useDeleteFormMutation, useGetFormQuery} from '../../shared/api/api'
 import { Button } from '../../shared/ui/Button/Button'
 import './AdminSchedule.css'
+import { useAuth } from '../../shared/context/AuthContext.jsx'
+
 
 export const AdminSchedule = () => {
+   const { isAuthenticated } = useAuth();
+   console.log("isAuthenticated", isAuthenticated);
+
     const [applications, setAppllications] = useState([])
     const {data, isLoading, refetch, isFetching, isError, error} = useGetFormQuery();
     const [confirmForm] = useConfirmFormMutation();
