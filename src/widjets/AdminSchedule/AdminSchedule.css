@@ -1,0 +1,77 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; 
+}
+
+.container-admin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-left: 1,25rem;
+}
+
+.head {
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+    align-self: center;
+}
+.receiving {
+    font-family: "Playfair Display", serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: black;
+    align-self: center;
+} 
+.btn-refresh{
+    width: 20%;
+    font-weight: 500;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+    margin-top: 1.25rem;  
+    margin-left: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+.application{
+    width: 18.75rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.15rem ;
+    margin-top: 0.7rem;    
+}
+.btn-admin {
+    display: flex;   
+    gap: 15px;
+}
+.btn.button {
+    width: 5rem; 
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.625rem;
+}
+.button.confirm-button:disabled {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+    font-size: 0.75rem;                
+    cursor: default;
+    border: 0.06rem solid #81c784;      
+    opacity: 1;                     
+    display: flex;
+    align-items: center;    
+}
+@media all and (max-width: 540px ) {
+    .head{
+        font-size: 1rem;
+    }
+    .btn-refresh{
+        width:80%;
+    }
+
+}
+
+

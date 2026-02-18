@@ -2,6 +2,12 @@ import { Controller, FormProvider, useForm } from "react-hook-form"
 import { Button } from "../../../../shared/ui/Button/Button"
 import { dataForm } from "../../lib/dataForm"
 import './Schedule.css'
+import { useSaveFormMutation } from "../../../../shared/api/api"
+import { useEffect } from "react"
+import { ContactCard } from "../ContactCard/ContactCard"
+import { useNavigate } from "react-router-dom"
+
+
 export const Schedule = () => {
 
    //the mock data
@@ -16,7 +22,7 @@ export const Schedule = () => {
     const methods = useForm({
         mode: 'onSubmit',
         defaultValues: {
-        userName: '', 
+        username: '', 
         phone: '',
         service: '',
         location: '',
@@ -33,14 +39,50 @@ export const Schedule = () => {
     maxDate.setDate(today.getDate() + 14)
 
     const { register, handleSubmit, watch, reset, setValue, control, formState: { errors } } = methods;
-    const onSubmit = (data) => {
+    const [saveForm, {isSuccess, isError, error}] = useSaveFormMutation();
+    const navigate = useNavigate();
+    // const { isAuthenticated } = useAuth();
+    const onSubmit = async (data) => {  
         console.log('Form submitted:', data);
-        reset()
-};
+        try{
+            const payload = {
+                username: data.username,
+                phone: data.phone,
+                service: data.service,
+                location: data.location,
+                prefferedDate: data.datePicker.toISOString(),
+                prefferedTime: data.timePicker.toISOString(),
+                message: data.message
+            };
+            const response = await saveForm(payload).unwrap();
+            console.log('The server received the request',response);
+            reset();
+        }
+        catch (err) {
+            console.log('Form submission error', err)
+        }
+    };
+   
+    useEffect(() => {
+        if (isSuccess) {
+            console.log('The session request was successful')
+        }
+        if (isError) {
+            console.log('Error request', error)
+        }
+        }, [isSuccess,isError,error]
+    )
 
     
     return (
         <div className="container-schedule" >
+            <Button className="btn-signIn" type="submit" onClick={() => navigate('/login')}>
+                Sign in
+            </Button>
+            <div className='headliner'>
+                <h1 >Session Schedule</h1>
+            </div>   
+            <div className="containerHolder">  
             <FormProvider {...methods}>
                 <form noValidate className="schedule" onSubmit={handleSubmit(onSubmit)}> 
                     {dataForm.map(({id, component: Component, name, label, placeholder, required, error, className, validation, ...props}) => (
@@ -101,9 +143,11 @@ export const Schedule = () => {
                     ))}
                     <Button className='btn' type="submit">
                         Submit
-                    </Button>               
+                    </Button> 
                 </form>
-            </FormProvider>            
+            </FormProvider>     
+            <ContactCard/>   
+            </div>      
         </div>
     )
 }

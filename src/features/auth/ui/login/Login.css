@@ -1,0 +1,34 @@
+.container-signin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin:auto;
+}
+.head-sighin{
+    font-family: "Playfair Display", serif;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+    align-self: center;
+}
+
+.input-eye{
+    display: flex;
+}
+
+.input-password{
+    position: relative;
+}
+.eyes{
+    position: absolute;
+    top: 130px;
+    left: 850px;
+}
+
+.btn.btn-show{
+    width: 20%;
+    margin-top: 1.25rem;
+    padding: 10px;
+}
+

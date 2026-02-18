@@ -1,15 +1,16 @@
 import './Button.css'
 
 export const Button = ({
-    className,
+    className = '',
     children,
     onClick,
-    color
-    
+    ...props    
 }) => {
-    return(
-        <div>
-            <button className='btn'>{children}</button>
-        </div>
+    return(        
+            <button 
+                className={`btn ${className}`}
+                onClick = {onClick}
+                {...props}>
+                {children}</button>
     )
 }
