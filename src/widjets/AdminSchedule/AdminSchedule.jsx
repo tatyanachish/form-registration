@@ -6,8 +6,7 @@ import { useAuth } from '../../shared/context/AuthContext.jsx'
 
 
 export const AdminSchedule = () => {
-   const { isAuthenticated } = useAuth();
-   console.log("isAuthenticated", isAuthenticated);
+    const { isAuthenticated } = useAuth();
 
     const [applications, setAppllications] = useState([])
     const {data, isLoading, refetch, isFetching, isError, error} = useGetFormQuery();
@@ -27,11 +26,10 @@ export const AdminSchedule = () => {
             try{
                 await deleteForm(id).unwrap();
                 setAppllications((prev) => prev.filter((item) => item._id !== id));
-                console.log('Application deleted')
             }
-            catch(error) {
-                console.log('Failed to delete', error)
-            }
+            catch (error) {
+                    alert("Failed to delete application. Please try again.");
+}
         }
     }
 

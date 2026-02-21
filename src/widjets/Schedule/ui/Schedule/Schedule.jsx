@@ -42,7 +42,6 @@ export const Schedule = () => {
     const [saveForm, {isSuccess, isError, error}] = useSaveFormMutation();
     const navigate = useNavigate();
     const onSubmit = async (data) => {  
-        console.log('Form submitted:', data);
         try{
             const payload = {
                 username: data.username,
@@ -54,23 +53,23 @@ export const Schedule = () => {
                 message: data.message
             };
             const response = await saveForm(payload).unwrap();
-            console.log('The server received the request',response);
             reset();
+            alert("Your application has been successfully submitted!");
         }
         catch (err) {
-            console.log('Form submission error', err)
+            alert("Failed to submit the form. Please try again.");
         }
     };
    
-    useEffect(() => {
-        if (isSuccess) {
-            console.log('The session request was successful')
-        }
-        if (isError) {
-            console.log('Error request', error)
-        }
-        }, [isSuccess,isError,error]
-    )
+  useEffect(() => {
+    if (isSuccess) {
+        alert("The session was successfully updated.");
+    }
+
+    if (isError) {
+        alert("Failed to update the session. Please try again.");
+    }
+}, [isSuccess, isError, error])
 
     
     return (
