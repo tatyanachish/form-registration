@@ -34,12 +34,22 @@ export const AdminSchedule = () => {
     }
 
 
-    if(isLoading) return <h3>Waiting...</h3>
-    if(isError) {
-        console.log(error)
-        return <h3>Error loading</h3>
+    // if(isLoading) return <h3>Waiting...</h3>
+    // if(isError) {
+    //     console.log(error)
+    //     return <h3>Error loading</h3>
+    // }
+    if (isLoading || !data) {
+        return (
+            <div className='loading-wrapper'>
+                <div className='loading-spinner'></div>
+                <div className='loading-text'>
+                ☕ Warming up the server...<br />
+                Please wait a moment.
+                </div>
+            </div>
+        );
     }
-
     return (
         <div className='container-admin'>
             <div className="head">
