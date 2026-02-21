@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useSighinMutation } from "../../api/apiUser";
 import { replace, useLocation, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Input } from "../../../../shared/ui/Input/Input";
 import { Eye } from "../../../../shared/assets/Eye";
 import { EyeOff } from "../../../../shared/assets/EyeOff"

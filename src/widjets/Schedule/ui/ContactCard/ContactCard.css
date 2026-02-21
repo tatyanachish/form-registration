@@ -18,14 +18,14 @@
 .contactTitle{
     color:#FDCE16;
     font-family: "Playfair Display", serif;   
-    font-size: 24px;
+    font-size: 1.5rem;
     font-weight: 500;
     opacity: 0.8;
 }
 .contactInfo{
     color:white;
     font-family: "Playfair Display", serif;   
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     opacity: 0.8;
     gap:0.5rem;
@@ -46,12 +46,6 @@
 @media all and (max-width: 768px) {
     .cardHolder {
         width: 90%;
-        height: auto;           
-    }
-}
-@media all and (max-width: 540px) {
-    .cardHolder {
-        width: 80%;
         height: auto;           
     }
 }

@@ -8,7 +8,7 @@
 }
 .label{
     font-family: "Playfair Display", serif;
-    font-size: 20px;
+    font-size: 1.25rem;
     font-weight: 500;
     color: black;
 }
@@ -43,7 +43,7 @@
     background-color: #F5F5F5;
     padding: 1rem 1.5rem;
     font-family: "Playfair Display", serif;
-    font-size: 18px;
+    font-size: 1.125rem;
     width: 100%;
     box-sizing: border-box;
 }
