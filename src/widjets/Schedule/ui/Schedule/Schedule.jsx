@@ -41,7 +41,6 @@ export const Schedule = () => {
     const { register, handleSubmit, watch, reset, setValue, control, formState: { errors } } = methods;
     const [saveForm, {isSuccess, isError, error}] = useSaveFormMutation();
     const navigate = useNavigate();
-    // const { isAuthenticated } = useAuth();
     const onSubmit = async (data) => {  
         console.log('Form submitted:', data);
         try{

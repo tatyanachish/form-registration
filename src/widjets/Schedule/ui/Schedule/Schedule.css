@@ -15,7 +15,6 @@ html, body {
     background-color: #003d2b;
     color:#FDCE16;    
     font-weight: 500;
-    /* align-self: flex-end; */
 }
 
 .headliner{
@@ -71,26 +70,30 @@ html, body {
 @media all and (max-width: 1200px) {
     .container-schedule {
         width: 90%;
-        padding: 0 50px; 
+        padding: 0 3.125rem; 
         box-sizing: border-box;
         flex-direction: column;
     }
     .schedule {
         width: 100%;
-        max-width: 400px;
+        max-width: 25rem;
         margin: 0 auto; 
         display: flex;
-        gap: 16px;
+        gap: 1rem;
     }
     .btn {
         width: 100%;
-        font-size: 14px;
+        font-size: 0.875rem;
     } 
 }
 @media all and (max-width: 1024px) {
-
+    .btn.btn-signIn {
+        margin-top: 1rem;
+    }
     .containerHolder{
         margin-bottom: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
     .schedule {
         display: flex;
@@ -98,12 +101,6 @@ html, body {
     }
 }
 
-@media all and (max-width: 100px) {
-    .containerHolder{
-        display:flex;
-        flex-direction: column;
-    }
-}
 
 
 

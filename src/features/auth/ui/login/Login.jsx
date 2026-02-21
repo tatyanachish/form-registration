@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { useSighinMutation } from "../../api/apiUser";
-import { replace, useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { replace, useLocation, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { Input } from "../../../../shared/ui/Input/Input";
 import { Eye } from "../../../../shared/assets/Eye";
 import { EyeOff } from "../../../../shared/assets/EyeOff"
@@ -18,52 +18,40 @@ export const Login = () => {
             password: ""
         }
     });
-    const { register, reset, handleSubmit, formState: {error} } = methods;
+    const { register, reset, handleSubmit, formState: {errors} } = methods;
     const [signin, { isLoading}] = useSighinMutation();
 
     const [errorMessage, setErrorMessage] = useState('');
-    const [showPassword, setShowPassword] = useState(false)
-    const [attempts, setAttepmts] = useState(3)
+    const [showPassword, setShowPassword] = useState(false);
+    const [attempts, setAttempts] = useState(3);
 
     const navigate = useNavigate();    
-    // const { login } = useAuth();
+    const location = useLocation();
+
     const { login } = useAuth();
     
-// console.log("isAuthenticated:", isAuthenticated);
-//  useEffect(() => {
-//         if (isAuthenticated) {
-//             navigate('/', { replace: true });
-//         }
-//     }, [isAuthenticated, navigate]);
-
-
-    // useEffect (() => {
-    //     if(isAuthenticated) {
-    //         navigate('/', {replace: true})
-    //     }
-    // }, [isAuthenticated, navigate])
-
-
+    const from = location.state?.from || '/admin/schedule';
+    
     const onSubmit = async(data) => {
         try{
             const response = await signin(data).unwrap();
             login(response.token); //сохраняем токен
-            navigate('/admin/schedule');
+            navigate(from, { replace: true });
             reset();
         }
         catch (err) {
             if(err?.status === 500) {
-                setErrorMessage("Serever mistake.Try again later");
+                setErrorMessage("Server mistake.Try again later");
                 return;
             } 
             if (attempts > 1) {
                 const left = attempts - 1;
-                setAttepmts(left);
+                setAttempts(left);
                 setErrorMessage(`Incorrect password, You have ${left} attempts left`)
             }
             else {
                 setErrorMessage('Incorrect password. Redirecting ...')
-                setTimeout(() =>navigate('/'), 1500)
+                setTimeout(() => {navigate('/', {replace: true })}, 1500)
             }
         }
     }
@@ -80,11 +68,13 @@ export const Login = () => {
                     <input type="text" name="fakeuser" autoComplete="username" style={{ display: "none" }} />
                     <input type="password" name="fakepass" autoComplete="new-password" style={{ display: "none" }} />
         
-                    <Input  type={showPassword ? 'text' : 'password'} 
-                            label="Password" 
-                            autoComplete="new-password"
-                            { ...register("password")} 
-                            required                     
+                    <Input  
+                        type={showPassword ? "text" : "password"}
+                        label="Password"
+                        autoComplete="new-password"
+                        {...register("password", {
+                            required: "Password is required",
+                        })}
                     />  
                     {showPassword ? (
                         <EyeOff className="eyes" onClick={togglePassword}/>
@@ -93,7 +83,8 @@ export const Login = () => {
                     )
                 }
                 </div>                                 
-                <Button type='submit' className="btn-show">Submit</Button>
+                <Button type='submit' className="btn-show" disabled={isLoading}>
+                    {isLoading ? 'Loading...' : 'Submit'}</Button>
             </form>
             
         </div>
