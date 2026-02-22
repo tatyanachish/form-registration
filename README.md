@@ -43,7 +43,7 @@ The backend API is located here:
 ---
 
 ## API
-his frontend communicates with the backend API located here:
+This frontend communicates with the backend API located here:
 !! Добавить адрес
 
 ---
