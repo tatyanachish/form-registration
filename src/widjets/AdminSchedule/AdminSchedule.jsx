@@ -32,13 +32,7 @@ export const AdminSchedule = () => {
 }
         }
     }
-
-
-    // if(isLoading) return <h3>Waiting...</h3>
-    // if(isError) {
-    //     console.log(error)
-    //     return <h3>Error loading</h3>
-    // }
+    
     if (isLoading || !data) {
         return (
             <div className='loading-wrapper'>

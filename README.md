@@ -1,30 +1,59 @@
-An interactive registration-form built on React + Vite, with custom components, validation, and responsive design.
+# React Rgistration Form with Real-time Validation
+An interactive registration form built with React + Vite, featuring custom components, real‑time validation, and responsive UI.
+This repository contains the client-side part of the project.
+The backend API is located here:
+!! Добавить адрес
 
-# Features:
-1.	Custom inputs with unified API and styling.
-2.	React-hook-form and DatePicker for form management and date selection.
-3.	Lucide Icons - lightweight SVG-icons for improved UX.
-4.	Partial FSD-architecture: logic and UI are separated into widgets and shared.
-5.	Responsive layout with media queries.
+--- 
 
-# Stack:
-1.	React + Vite.
-2.	React-hook-form.
-3.	React-DatePicker.
-4.	Lucide-react.
-5.	CSS instead of SAAS for faster development in this pet-project
+## Preview
+<img width="1093" height="740" alt="image" src="https://github.com/user-attachments/assets/2fc8e6e1-7610-40a6-9ce7-907bac3573d2" />
 
-# Installation and run: 
+---
+
+## Features
+
+- Custom input components with unified API
+- Real‑time validation using react-hook-form
+- Date selection via React-DatePicker
+- Lightweight Lucide-react icons
+- Partial FSD‑style structure (widgets, shared components)
+- Fully responsive layout
+
+---
+
+## Installation and runing: 
+
   npm install 
   npm run dev
 
-# Notes
-1.	The application is easily scalable.
-2.	Form components are rendered via the dataForm array.
-3.	React-hook-form with custom rules is used for validation.
-4.	Controller is used for DatePicker integration.
+  The app will start on:
+  http://localhost:3000
 
-   <img width="1093" height="740" alt="image" src="https://github.com/user-attachments/assets/2fc8e6e1-7610-40a6-9ce7-907bac3573d2" />
+---
+
+## Tech Stack
+- React
+- Vite
+- React Hook Form
+- React DatePicker
+- Lucide-react
+- CSS 
+
+---
+
+## API
+his frontend communicates with the backend API located here:
+!! Добавить адрес
+
+---
+
+# Notes
+- Form fields are generated dynamically from a configuration array
+- Validation rules are defined via react-hook-form
+- Submit button is disabled until the form is valid
+
+
 
 
 
