@@ -2,7 +2,6 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { createApiConfig } from "./createApiConfig";
 
 const config = {
-    production: "",
     develop: import.meta.env.VITE_API_URL
 };
 

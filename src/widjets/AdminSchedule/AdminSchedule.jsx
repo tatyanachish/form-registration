@@ -49,6 +49,12 @@ export const AdminSchedule = () => {
             <div className="head">
                 <h1>Session Schedule</h1>
             </div>
+            
+        <div className="demo-warning">
+            ⚠️ Demo version.  
+            All submitted applications are automatically deleted once per day.
+        </div>
+
             <div className='receiving'>
                 <h2>Received applications</h2>
             </div>

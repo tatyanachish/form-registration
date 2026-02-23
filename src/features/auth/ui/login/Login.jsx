@@ -63,6 +63,11 @@ export const Login = () => {
         <div >
             <form className="container-signin" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="head-sighin">Sigh In</h1>
+                <div className="demo">
+                    <p>🔐 Demo login</p>
+                    <p>Use the demo password <span className="highlight-signin">12345</span> to sign in.</p>
+                </div>
+
                 {errorMessage && <p>{errorMessage}</p>}  
                 <div className='input-eye'>  
                     <input type="text" name="fakeuser" autoComplete="username" style={{ display: "none" }} />

@@ -16,7 +16,21 @@ html, body {
     color:#FDCE16;    
     font-weight: 500;
 }
-
+.demo{
+    display: flex;
+    flex-direction: column;
+    font-family: "Playfair Display", serif;
+    align-items: center;
+    line-height: 0.3;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.highlight-signin{
+    color:#fbcf16;       
+    font-weight: 600;
+    font-size: 1.05em;
+    cursor: pointer;
+}
 .headliner{
     font-family: "Playfair Display", serif;
     font-size: 1.5rem;
@@ -99,6 +113,10 @@ html, body {
     .schedule {
         display: flex;
         flex-direction: column;        
+    }
+    .highlight-signin{
+        line-height: 1.2;
+        font-size: 1.6rem;
     }
 }
 

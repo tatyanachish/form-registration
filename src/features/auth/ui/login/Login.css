@@ -25,6 +25,7 @@ html, body {
     max-width: 18.75rem;
     display: flex;
     align-items: center;
+    margin-top: 20px;
 }
 
 .input-password{

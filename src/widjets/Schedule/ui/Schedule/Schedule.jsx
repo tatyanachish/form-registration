@@ -77,6 +77,10 @@ export const Schedule = () => {
             <Button className="btn-signIn" type="submit" onClick={() => navigate('/login')}>
                 Sign in
             </Button>
+            <div className="demo">
+                <p>🔍 Demo version</p> 
+                <p>Enter any data and click the button<strong className="highlight-signin" onClick={() => navigate('/login')}> Sign In</strong> to explore how the application works.</p>
+            </div>
             <div className='headliner'>
                 <h1 >Session Schedule</h1>
             </div>   

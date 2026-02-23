@@ -1,8 +1,8 @@
-# React Rgistration Form with Real-time Validation
+# React Registration Form with Real-time Validation
 An interactive registration form built with React + Vite, featuring custom components, real‑time validation, and responsive UI.
 This repository contains the client-side part of the project.
 The backend API is located here:
-!! Добавить адрес
+https://github.com/tatyanachish/new-backend-form-registration
 
 --- 
 
@@ -44,7 +44,7 @@ The backend API is located here:
 
 ## API
 This frontend communicates with the backend API located here:
-!! Добавить адрес
+https://new-backend-form-registration.onrender.com/
 
 ---
 
