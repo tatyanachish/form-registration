@@ -21,22 +21,22 @@ export const api = createApi({
         }),
 
         saveForm: build.mutation({
-            query: (form) => createApiConfig('POST', '/saveForm', form),
+            query: (form) => createApiConfig('POST', 'saveForm', form),
             invalidatesTags: [FORM]
         }),
 
         updateForm: build.mutation({
-            query: (form) => createApiConfig('PUT', `/updateForm/${form.id}`, form),
+            query: (form) => createApiConfig('PUT', `updateForm/${form.id}`, form),
             invalidatesTags: [FORM]
         }),
 
         confirmForm: build.mutation({
-            query: (id) => createApiConfig('PUT',`/confirmForm/${id}`),
+            query: (id) => createApiConfig('PUT',`confirmForm/${id}`),
             invalidatesTags: [FORM]
         }),
 
         deleteForm: build.mutation({
-            query: (id) => createApiConfig('DELETE', `/deleteForm/${id}`),
+            query: (id) => createApiConfig('DELETE', `deleteForm/${id}`),
             invalidatesTags: [FORM]
         })
     })
