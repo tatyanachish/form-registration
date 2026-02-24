@@ -35,6 +35,7 @@ export const Login = () => {
     const onSubmit = async(data) => {
         try{
             const response = await signin(data).unwrap();
+            console.log("TOKEN FROM BACKEND:", response.token);//delete later
             login(response.token); //сохраняем токен
             navigate(from, { replace: true });
             reset();
