@@ -3,7 +3,7 @@ import { useConfirmFormMutation, useDeleteFormMutation, useGetFormQuery} from '.
 import { Button } from '../../shared/ui/Button/Button'
 import './AdminSchedule.css'
 import { useAuth } from '../../shared/context/AuthContext.jsx'
-
+import Swal from 'sweetalert2'
 
 export const AdminSchedule = () => {
     const { isAuthenticated } = useAuth();
@@ -19,6 +19,26 @@ export const AdminSchedule = () => {
             setAppllications(data)
         }
     }, [data]);
+    useEffect(() => {
+            Swal.fire({
+                icon: "info",
+                title: "Demo version",
+                html: `
+                    <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                        All submitted applications are automatically deleted once per day.
+                    </p>
+                `,
+                confirmButtonText: "Got it",
+                confirmButtonColor: "#003D2B",
+                width: "300px",
+                background: "#fffdf7",
+                backdrop: "rgba(0,0,0,0.3)",
+                padding: "1.5rem",
+                customClass: {
+                    icon: "my-green-icon"
+            }
+            });
+        }, []);
 
     const handleDelete = async(id) => {
         const confirm = window.confirm(" You are going to delete this application. Are you sure?")
@@ -44,16 +64,13 @@ export const AdminSchedule = () => {
             </div>
         );
     }
+
+     
     return (
         <div className='container-admin'>
             <div className="head">
                 <h1>Session Schedule</h1>
             </div>
-            
-        <div className="demo-warning">
-            ⚠️ Demo version.  
-            All submitted applications are automatically deleted once per day.
-        </div>
 
             <div className='receiving'>
                 <h2>Received applications</h2>
@@ -70,9 +87,10 @@ export const AdminSchedule = () => {
                         <p>Phone: <strong>{item.phone}</strong></p>
                         <p>Service: <strong>{item.service}</strong></p>
                         <p>Location: <strong>{item.location}</strong></p>
-                        <p>Date: <strong>{new Date(item.prefferedDate).toLocaleDateString()}</strong></p>
-                        <p>Time:<strong>{new Date(item.prefferedTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</strong></p>
-                        <p>Message:<strong>{item.message}</strong></p>
+                        <p>Date: <strong> {new Date(item.prefferedDate).toLocaleDateString()}</strong></p>
+                        <p>Time:<strong> {new Date(item.prefferedTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</strong></p>
+                        <p>Message:</p>
+                            <div className="message-box">{item.message}</div>
                         <p>Status: <strong>{item.status}</strong></p>
                         <div className='btn-admin'>                            
                             <Button className='button confirm-button'
@@ -82,8 +100,7 @@ export const AdminSchedule = () => {
                             </Button>
                             <Button className='button' onClick = {() => handleDelete(item._id)}>Delete</Button>               
                         </div>
-                    </div>
-                    
+                    </div>                    
                 ))
             )
             }

@@ -1,12 +1,13 @@
 import { useForm } from "react-hook-form"
 import { useSighinMutation } from "../../api/apiUser";
 import { replace, useLocation, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Input } from "../../../../shared/ui/Input/Input";
 import { Eye } from "../../../../shared/assets/Eye";
 import { EyeOff } from "../../../../shared/assets/EyeOff"
 import { Button } from "../../../../shared/ui/Button/Button";
 import{ useAuth } from "../../../../shared/context/AuthContext"
+import Swal from 'sweetalert2'
 import './Login.css'
 
 export const Login = () => {
@@ -56,18 +57,36 @@ export const Login = () => {
         }
     }
 
-
+    
     const togglePassword = () => setShowPassword(prev => !prev);
+    
+    useEffect(() => {
+        Swal.fire({
+            icon: "info",
+            title: "Demo version",
+            html: `
+                <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                    This is a demo version. Use password <b>12345</b> to sign in.
+                </p>
+            `,
+            confirmButtonText: "Got it",
+            confirmButtonColor: "#003D2B",
+            width: "300px",
+            background: "#fffdf7",
+            backdrop: "rgba(0,0,0,0.3)",
+            padding: "1.5rem",
+            customClass: {
+                icon: "my-green-icon"
+        }
+        });
+    }, []);
+
 
         return(
         <div >
             <form className="container-signin" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
                 <h1 className="head-sighin">Sigh In</h1>
-                <div className="demo">
-                    <p>🔐 Demo login</p>
-                    <p>Use the demo password <span className="highlight-signin">12345</span> to sign in.</p>
-                </div>
-
+                
                 {errorMessage && <p>{errorMessage}</p>}  
                 <div className='input-eye'>  
                     <input type="text" name="fakeuser" autoComplete="username" style={{ display: "none" }} />

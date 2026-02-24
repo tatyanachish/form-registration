@@ -1,4 +1,4 @@
-import { Login } from "../../../features/auth/ui/login/Login";
+import { Login } from "../../../features/auth/ui/Login/Login";
 import { MainPages } from "../../../pages/MainPages/MainPages";
 import { AdminSchedule } from "../../../widjets/AdminSchedule/AdminSchedule";
 import { getRouteAdmin, getRouteLoginAdmin, getRouteSchedule } from "./router";

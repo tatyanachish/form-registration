@@ -6,6 +6,7 @@ import { useSaveFormMutation } from "../../../../shared/api/api"
 import { useEffect } from "react"
 import { ContactCard } from "../ContactCard/ContactCard"
 import { useNavigate } from "react-router-dom"
+import Swal from 'sweetalert2'
 
 
 export const Schedule = () => {
@@ -19,16 +20,17 @@ export const Schedule = () => {
         new Date(new Date().setHours(13, 0, 0, 0)),
         new Date(new Date().setHours(17, 0, 0, 0))
     ]
+
     const methods = useForm({
         mode: 'onSubmit',
         defaultValues: {
-        username: '', 
-        phone: '',
-        service: '',
-        location: '',
-        datePicker: new Date(),
-        timePicker: availableTimes[0],
-        message: '',
+            username: '', 
+            phone: '',
+            service: '',
+            location: '',
+            datePicker: new Date(),
+            timePicker: availableTimes[0],
+            message: '',
     }});
 
     const serviceOptions = ['service 1', 'service 2', 'service 3'];
@@ -54,22 +56,57 @@ export const Schedule = () => {
             };
             const response = await saveForm(payload).unwrap();
             reset();
-            alert("Your application has been successfully submitted!");
+
+            Swal.fire({
+                html: `
+                    <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                        Your application has been successfully submitted!
+                    </p>
+                `,
+                confirmButtonText: "OK",
+                confirmButtonColor: "#003D2B",
+                background: "#fffdf7",
+                backdrop: "rgba(0,0,0,0.3)",
+                padding: "1.5rem",
+            });
         }
         catch (err) {
-            alert("Failed to submit the form. Please try again.");
+            Swal.fire({
+                html: `
+                    <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                        Failed to submit the form. Please try again.
+                    </p>
+                `,
+                confirmButtonText: "OK",
+                confirmButtonColor: "#003D2B",
+                background: "#fffdf7",
+                backdrop: "rgba(0,0,0,0.3)",
+                padding: "1.5rem",
+            })
         }
-    };
-   
-  useEffect(() => {
-    if (isSuccess) {
-        alert("The session was successfully updated.");
-    }
+    };   
 
-    if (isError) {
-        alert("Failed to update the session. Please try again.");
-    }
-}, [isSuccess, isError, error])
+    useEffect(() => {
+        Swal.fire({
+            icon: 'info',
+            title: 'Demo version',
+            html: `
+                <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                    This is a demo version. Enter any data and click <b>Sign In</b> to explore how the application works.
+                </p>
+            `,
+            confirmButtonText: 'Got it',
+            confirmButtonColor: "#003D2B",
+            width: "300px",
+            background: "#fffdf7",
+            backdrop: "rgba(0,0,0,0.3)",
+            padding: "1.5rem",
+            customClass: {
+                icon: "my-green-icon"
+            }
+        });
+    }, []);
+
 
     
     return (
@@ -77,10 +114,7 @@ export const Schedule = () => {
             <Button className="btn-signIn" type="submit" onClick={() => navigate('/login')}>
                 Sign in
             </Button>
-            <div className="demo">
-                <p>🔍 Demo version</p> 
-                <p>Enter any data and click the button<strong className="highlight-signin" onClick={() => navigate('/login')}> Sign In</strong> to explore how the application works.</p>
-            </div>
+            
             <div className='headliner'>
                 <h1 >Session Schedule</h1>
             </div>   
