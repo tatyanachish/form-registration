@@ -18,7 +18,6 @@ export const AuthProvider = ({children}) => {
 
 
     const login = (token) => {
-        console.log("SETTING COOKIE:", token);//delete later
 
         Cookies.set('token', token, { 
             expires: 7,
