@@ -18,7 +18,12 @@ export const AuthProvider = ({children}) => {
 
 
     const login = (token) => {
-        Cookies.set('token', token, { expires: 7 });
+        Cookies.set('token', token, { 
+            expires: 7,
+            path: '/',
+            secure: true,
+            sameSite: 'Lax'
+        });
         setAuthenticated(true)
     }
 
