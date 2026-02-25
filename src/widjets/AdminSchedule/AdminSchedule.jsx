@@ -24,7 +24,7 @@ export const AdminSchedule = () => {
                 icon: "info",
                 title: "Demo version",
                 html: `
-                    <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                    <p style="font-size: 20px; color: #555; margin-top: 10px;">
                         All submitted applications are automatically deleted once per day.
                     </p>
                 `,

@@ -91,7 +91,7 @@ export const Schedule = () => {
             icon: 'info',
             title: 'Demo version',
             html: `
-                <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                <p style="font-size: 20px; color: #555; margin-top: 10px;">
                     This is a demo version. Enter any data and click <b>Sign In</b> to explore how the application works.
                 </p>
             `,

@@ -65,7 +65,7 @@ export const Login = () => {
             icon: "info",
             title: "Demo version",
             html: `
-                <p style="font-size: 15px; color: #555; margin-top: 10px;">
+                <p style="font-size: 20px; color: #555; margin-top: 10px;">
                     This is a demo version. Use password <b>12345</b> to sign in.
                 </p>
             `,
