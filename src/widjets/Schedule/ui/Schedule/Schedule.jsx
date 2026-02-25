@@ -41,7 +41,7 @@ export const Schedule = () => {
     maxDate.setDate(today.getDate() + 14)
 
     const { register, handleSubmit, watch, reset, setValue, control, formState: { errors } } = methods;
-    const [saveForm, {isSuccess, isError, error}] = useSaveFormMutation();
+    const [saveForm, {isSuccess, isLoading, isError, error}] = useSaveFormMutation();
     const navigate = useNavigate();
     const onSubmit = async (data) => {  
         try{
@@ -85,6 +85,7 @@ export const Schedule = () => {
             })
         }
     };   
+    
 
     useEffect(() => {
         Swal.fire({
@@ -106,6 +107,19 @@ export const Schedule = () => {
             }
         });
     }, []);
+    
+    if (isLoading) {
+        return (
+            <div className='loading-wrapper'>
+                <div className='loading-spinner'></div>
+                <div className='loading-text'>
+                    ☕ Warming up the server...<br />
+                    Please wait a moment.
+                </div>
+            </div>
+        );
+    }
+
 
 
     

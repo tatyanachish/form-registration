@@ -65,7 +65,6 @@ export const AdminSchedule = () => {
         );
     }
 
-     
     return (
         <div className='container-admin'>
             <div className="head">
