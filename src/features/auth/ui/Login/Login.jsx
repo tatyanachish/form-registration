@@ -85,7 +85,7 @@ export const Login = () => {
         return(
         <div >
             <form className="container-signin" autoComplete="off" onSubmit={handleSubmit(onSubmit)}>
-                <h1 className="head-sighin">Sigh In</h1>
+                <h1 className="head-sighin">Sign In</h1>
                 
                 {errorMessage && <p>{errorMessage}</p>}  
                 <div className='input-eye'>  
